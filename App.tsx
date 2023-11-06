@@ -1,7 +1,8 @@
 import { NavigationContainer } from '@react-navigation/native';
+import AppDrawer from './app/components/drawer';
 
 import 'react-native-gesture-handler';
-import AppDrawer from './app/drawer';
+import './app/lib/fontawesome';
 
 export default function App() {
   return (
