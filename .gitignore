@@ -1,9 +1,8 @@
 # OSX
-#
 .DS_Store
+*.pem
 
 # Xcode
-#
 build/
 *.pbxuser
 !default.pbxuser
@@ -23,7 +22,6 @@ DerivedData
 project.xcworkspace
 
 # Android/IntelliJ
-#
 build/
 .idea
 .gradle
@@ -32,7 +30,6 @@ local.properties
 *.hprof
 
 # node.js
-#
 node_modules/
 npm-debug.log
 yarn-error.log
@@ -60,5 +57,28 @@ buck-out/
 /ios/Pods/
 
 # Expo
-.expo/*
+.expo/
+dist/
 web-build/
+
+# Native
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+
+# Metro
+.metro-health-check*
+
+# debug
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# local env files
+.env*.local
+
+# typescript
+*.tsbuildinfo
