@@ -1,20 +1,18 @@
-import { ExpoConfig, ConfigContext } from 'expo/config';
+import { ExpoConfig, ConfigContext } from "expo/config";
 
 export default ({ config }: ConfigContext): ExpoConfig => ({
   ...config,
-  slug: 'hydra',
-  name: 'Hydra',
+  slug: "hydra",
+  name: "Hydra",
   version: "1.0.0",
   description: "Hydra gives you access to all the UGent info wherever you are",
   orientation: "portrait",
   icon: "./assets/icon.png",
   splash: {
     image: "./assets/icon.png",
-    backgroundColor: "#ffffff"
+    backgroundColor: "#ffffff",
   },
-  assetBundlePatterns: [
-    "**/*"
-  ],
+  assetBundlePatterns: ["**/*"],
   ios: {
     supportsTablet: false,
     bundleIdentifier: "be.ugent.zeus.hydra",
@@ -23,8 +21,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     package: "be.ugent.zeus.hydra",
     adaptiveIcon: {
       foregroundImage: "./assets/icon.png",
-      backgroundColor: "#ffffff"
-    }
+      backgroundColor: "#ffffff",
+    },
   },
 });
-

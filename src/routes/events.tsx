@@ -5,5 +5,5 @@ export default function EventView() {
     <View>
       <Text>Events</Text>
     </View>
-  )
+  );
 }

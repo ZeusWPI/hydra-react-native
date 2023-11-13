@@ -1,10 +1,10 @@
-import { create } from 'zustand';
-import { DSAEvent } from '../types/stores';
+import { create } from "zustand";
+import { DSAEvent } from "../types/stores";
 
 declare type Store = {
-  events: DSAEvent[]
+  events: DSAEvent[];
 };
 
 export const AcitivityStore = create<Store>(set => ({
-  events: []
+  events: [],
 }));

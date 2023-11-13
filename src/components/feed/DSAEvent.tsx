@@ -1,8 +1,5 @@
-import { View } from "react-native"
+import { View } from "react-native";
 
 export const DSAEvent = () => {
-  return (
-    <View>
-    </View>
-  )
-}
+  return <View />;
+};

@@ -1,3 +1,3 @@
 export declare type DSAEvent = {
-  id: number
-}
+  id: number;
+};
