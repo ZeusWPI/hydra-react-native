@@ -10,17 +10,17 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   icon: "./assets/icon.png",
   splash: {
     image: "./assets/icon.png",
-    resizeMode: "contain",
     backgroundColor: "#ffffff"
   },
   assetBundlePatterns: [
     "**/*"
   ],
   ios: {
-    supportsTablet: false
+    supportsTablet: false,
+    bundleIdentifier: "be.ugent.zeus.hydra",
   },
   android: {
-  package: "be.ugent.zeus.hydra",
+    package: "be.ugent.zeus.hydra",
     adaptiveIcon: {
       foregroundImage: "./assets/icon.png",
       backgroundColor: "#ffffff"
