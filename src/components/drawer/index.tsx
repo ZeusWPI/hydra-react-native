@@ -16,7 +16,11 @@ const Drawer = createDrawerNavigator();
 
 const DrawerItemLabel = ({ entry, color }: { entry: DrawerEntry; color: string }) => (
   <View style={styles.drawerLabel}>
-    <FontAwesomeIcon color={color} icon={entry.icon} style={styles.drawerLabelIcon} />
+    {typeof entry.icon === "function" ? (
+      entry.icon({ color, style: styles.drawerLabelIcon })
+    ) : (
+      <FontAwesomeIcon color={color} icon={entry.icon} style={styles.drawerLabelIcon} />
+    )}
     <Text style={{ color }}>{entry.name}</Text>
   </View>
 );
@@ -71,6 +75,14 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  drawerLabel: { display: "flex", flexDirection: "row", alignItems: "center" },
-  drawerLabelIcon: { marginRight: 10 },
+  drawerLabel: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  drawerLabelIcon: {
+    marginRight: 10,
+    width: 16,
+    height: 16,
+  },
 });
