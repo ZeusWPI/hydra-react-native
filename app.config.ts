@@ -8,6 +8,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   description: "Hydra gives you access to all the UGent info wherever you are",
   orientation: "portrait",
   icon: "./assets/icon.png",
+  userInterfaceStyle: "automatic",
   splash: {
     image: "./assets/icon.png",
     backgroundColor: "#ffffff",
