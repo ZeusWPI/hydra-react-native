@@ -12,7 +12,6 @@
   outputs = { self, flake-utils, devshell, nixpkgs }:
     flake-utils.lib.eachDefaultSystem (system:
       let 
-        inherit (nixpkgs) lib;
         pkgs = import nixpkgs {
           inherit system;
           config.allowUnfree = true;
@@ -48,6 +47,7 @@
           packages = with pkgs; [
             jdk11 gradle git androidComposition.androidsdk
             nodejs nodePackages.yarn android-studio
+            watchman
           ];
           env = with pkgs; [
             {

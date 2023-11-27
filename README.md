@@ -1,36 +1,39 @@
-# TypeScript Example
+# Hydra React native
 
-<p>
-  <!-- iOS -->
-  <img alt="Supports Expo iOS" longdesc="Supports Expo iOS" src="https://img.shields.io/badge/iOS-4630EB.svg?style=flat-square&logo=APPLE&labelColor=999999&logoColor=fff" />
-  <!-- Android -->
-  <img alt="Supports Expo Android" longdesc="Supports Expo Android" src="https://img.shields.io/badge/Android-4630EB.svg?style=flat-square&logo=ANDROID&labelColor=A4C639&logoColor=fff" />
-  <!-- Web -->
-  <img alt="Supports Expo Web" longdesc="Supports Expo Web" src="https://img.shields.io/badge/web-4630EB.svg?style=flat-square&logo=GOOGLE-CHROME&labelColor=4285F4&logoColor=fff" />
-</p>
+## Development
 
-```sh
-npx create-react-native-app -t with-typescript
-```
+### Requirements
 
-TypeScript is a superset of JavaScript which gives you static types and powerful tooling in Visual Studio Code including autocompletion and useful inline warnings for type errors.
+- NodeJS (16+)
+- yarn
+- openjdk 11
+- Android studio (for android development). In the SDK manager (Tools -> SDK manager -> SDK Tools) install following tools
+    - Android SDK Build-Tools
+    - NDK (Side By Side)
+    - Android SDK Command-line Tools
+    - CMake
+    - Android Emulator
+    - Android SDK Platform-Tools
+- XCode (for ios development)
 
-## 🚀 How to use
+if you have [asdf](https://asdf-vm.com) installed you can use that to get the right software versions
 
-#### Creating a new project
+### Commands
+- `yarn install` installs the needed dependencies
+- `yarn android` or `yarn ios`
 
-- Install the CLI: `npm i -g expo-cli`
-- Create a project: `npx create-react-native-app -t with-typescript`
-- `cd` into the project
 
-### Adding TypeScript to existing projects
+### Expo-go
 
-- Create a blank TypeScript config: `touch tsconfig.json`
-- Run `yarn start` or `npm run start` to automatically configure TypeScript
-- Rename files to TypeScript, `.tsx` for React components and `.ts` for plain typescript files
+To preview the app on your own phone, download the expo go app [here](https://expo.dev/expo-go) and scan the QR-code shown in your terminal (make sure you developing using the Expo Go app, Above the list with keys it should say: `Using Expo Go`)
 
-> 💡 You can disable the TypeScript setup in Expo CLI with the environment variable `EXPO_NO_TYPESCRIPT_SETUP=1 expo start`
+### Nix
 
-## 📝 Notes
+If you're a nix & flake user you can use the devShell which includes android-studio and the right image versions needed to run the emulator
 
-- [Expo TypeScript guide](https://docs.expo.dev/versions/latest/guides/typescript/)
+### Libraries
+
+We use a lot of libraries around react-native to help us.
+- [expo](https://expo.dev)
+- [react-native-paper](https://callstack.github.io/react-native-paper/), a UI library that gives us the material-UI look
+- [react-native-gesture-handler](https://docs.swmansion.com/react-native-gesture-handler/docs/), a drop in replacement to fix the performance limitations of react native's gesture handler
