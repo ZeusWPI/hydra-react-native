@@ -24,7 +24,7 @@
           buildToolsVersions = [ "34.0.0" "30.0.3" ];
           includeEmulator = true;
           includeSystemImages = true;
-          abiVersions = [ "arm64-v8a" "x86_64" ];
+          abiVersions = [ "x86_64" ];
           emulatorVersion = "33.1.6";
           platformVersions = [ "34" "33" ];
           systemImageTypes = [ "google_apis_playstore" ];
