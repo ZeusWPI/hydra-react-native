@@ -10,14 +10,14 @@ export const UGentArticleFeed = ({article}: { article: UGentArticle }) => {
   };
 
   return (
-      <Surface style={{...styles.container, backgroundColor: article.category_color}}>
+      <Surface style={{...styles.container}}>
         <TouchableRipple rippleColor="rgba(0, 0, 0, .32)" onPress={handlePressArticle}>
           <>
             <View style={styles.textContainer}>
               <Text variant="headlineSmall" style={styles.title}>
                 {article.title}
               </Text>
-              <Text>
+              <Text style={styles.summary}>
                 {article.summary}
               </Text>
               <View style={styles.additionalInfo}>
@@ -43,11 +43,13 @@ const styles = StyleSheet.create({
   },
   textContainer: {
     padding: 15,
-    color: "#ddd",
   },
   title: {
     fontWeight: "600",
-    color: "#ddd",
+    paddingBottom: 20,
+  },
+  summary: {
+    paddingBottom: 10
   },
   additionalInfo: {
     marginTop: 5,
@@ -55,10 +57,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    color: "#ddd",
   },
   smallText: {
-    color: "#ddd",
     fontWeight: "900",
   },
 });
