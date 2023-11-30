@@ -19,9 +19,18 @@
 if you have [asdf](https://asdf-vm.com) installed you can use that to get the right software versions
 
 ### Commands
+
 - `yarn install` installs the needed dependencies
 - `yarn android` or `yarn ios`
 
+You might still have to set your `ANDROID_HOME` in your `~/.bashrc`
+
+```shell
+export ANDROID_HOME=${HOME}/Android/Sdk
+export PATH=${ANDROID_HOME}/tools:${PATH}
+export PATH=${ANDROID_HOME}/emulator:${PATH}
+export PATH=${ANDROID_HOME}/platform-tools:${PATH}
+```
 
 ### Expo-go
 
