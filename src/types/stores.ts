@@ -14,3 +14,20 @@ export declare type Article = {
   // ISO date string
   pub_date: string;
 };
+
+export declare type DSAEvent = {
+  id: string;
+
+  title: string;
+  description: string;
+
+  association: string; // human readable association abbreviation
+  address: string;
+  location: string;
+  type: string;
+
+  start_time: string; // ISO date string
+  end_time: string; // ISO date string
+  
+  infolink: string;
+}
