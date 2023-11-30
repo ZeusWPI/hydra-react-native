@@ -8,6 +8,7 @@ import { i18n } from "../../lib/i18n";
 import { UrgentFMView } from "../../routes/urgentfm";
 import { UrgentFMIcon } from "../icons/UrgentFMIcon";
 import { RefreshIconButton } from "../RefreshIconButton";
+import NewsView from "../../routes/news";
 
 export const routes: DrawerEntry[] = [
   {
@@ -39,4 +40,9 @@ export const routes: DrawerEntry[] = [
     element: UrgentFMView,
     icon: UrgentFMIcon,
   },
+  {
+    name: "UGent News",
+    element: NewsView,
+    icon: "newspaper"
+  }
 ];
