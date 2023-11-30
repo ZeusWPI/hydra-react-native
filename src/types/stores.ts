@@ -1,6 +1,3 @@
-export declare type DSAEvent = {
-  id: number;
-};
 
 export declare type Article = {
   title: string;
