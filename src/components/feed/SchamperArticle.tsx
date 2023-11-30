@@ -1,8 +1,8 @@
-import { Surface, Text } from "react-native-paper";
+import { Surface, Text, TouchableRipple } from "react-native-paper";
 import type { Article } from "../../types/stores";
 import { Image, StyleSheet, View } from "react-native";
 import { useEffect, useState } from "react";
-
+import * as WebBrowser from "expo-web-browser";
 export const SchamperArticle = ({ article }: { article: Article }) => {
   const [imgSize, setImgSize] = useState({ width: 0, height: 1 });
 
@@ -15,27 +15,35 @@ export const SchamperArticle = ({ article }: { article: Article }) => {
     });
   }, [article.image]);
 
+  const handlePressArticle = async () => {
+    WebBrowser.openBrowserAsync(article.link);
+  };
+
   return (
     <Surface style={{ ...styles.container, backgroundColor: article.category_color }}>
-      <Image
-        style={{
-          flex: 1,
-          aspectRatio: (imgSize.width ?? 1) / (Math.max(imgSize.height, 1) ?? 1),
-        }}
-        source={{ uri: article.image }}
-      />
-      <View style={styles.textContainer}>
-        <Text variant="headlineSmall" style={styles.title}>
-          {article.title}
-        </Text>
-        <View style={styles.additionalInfo}>
-          <View>
-            <Text style={styles.smallText}>{article.author}</Text>
-            <Text style={styles.smallText}>{article.pub_date}</Text>
+      <TouchableRipple rippleColor="rgba(0, 0, 0, .32)" onPress={handlePressArticle}>
+        <>
+          <Image
+            style={{
+              flex: 1,
+              aspectRatio: (imgSize.width ?? 1) / (Math.max(imgSize.height, 1) ?? 1),
+            }}
+            source={{ uri: article.image }}
+          />
+          <View style={styles.textContainer}>
+            <Text variant="headlineSmall" style={styles.title}>
+              {article.title}
+            </Text>
+            <View style={styles.additionalInfo}>
+              <View>
+                <Text style={styles.smallText}>{article.author}</Text>
+                <Text style={styles.smallText}>{article.pub_date}</Text>
+              </View>
+              <Text style={styles.smallText}>{article.category.toUpperCase()}</Text>
+            </View>
           </View>
-          <Text style={styles.smallText}>{article.category.toUpperCase()}</Text>
-        </View>
-      </View>
+        </>
+      </TouchableRipple>
     </Surface>
   );
 };
