@@ -1,6 +1,6 @@
 // import { ScrollView } from "react-native-gesture-handler";
 import { useUGentQuery } from "../stores/news";
-import { UGentArticle } from "../components/feed/UGentArticle";
+import { UGentArticleFeed } from "../components/feed/UGentArticle";
 import { StyleSheet, ScrollView } from "react-native";
 
 const NewsView = () => {
@@ -8,7 +8,7 @@ const NewsView = () => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       {articles.map(a => (
-        <UGentArticle key={a.link} article={a} />
+        <UGentArticleFeed key={a.link} article={a} />
       ))}
     </ScrollView>
   );

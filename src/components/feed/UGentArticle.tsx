@@ -1,34 +1,34 @@
-import { Surface, Text, TouchableRipple } from "react-native-paper";
-import type { UGentArticle } from "../../types/stores";
-import { Image, StyleSheet, View } from "react-native";
-import { useEffect, useState } from "react";
+import {Surface, Text, TouchableRipple} from "react-native-paper";
+import type {UGentArticle} from "../../types/stores";
+import {StyleSheet, View} from "react-native";
 import * as WebBrowser from "expo-web-browser";
-export const UGentArticle = ({ article }: { article: UGentArticle }) => {
+
+export const UGentArticleFeed = ({article}: { article: UGentArticle }) => {
 
   const handlePressArticle = async () => {
     WebBrowser.openBrowserAsync(article.link);
   };
 
   return (
-    <Surface style={{ ...styles.container, backgroundColor: article.category_color }}>
-      <TouchableRipple rippleColor="rgba(0, 0, 0, .32)" onPress={handlePressArticle}>
-        <>
-          <View style={styles.textContainer}>
-            <Text variant="headlineSmall" style={styles.title}>
-              {article.title}
-            </Text>
-            <Text>
-              {article.summary}
-            </Text>
-            <View style={styles.additionalInfo}>
-              <View>
-                <Text style={styles.smallText}>{article.updated}</Text>
+      <Surface style={{...styles.container, backgroundColor: article.category_color}}>
+        <TouchableRipple rippleColor="rgba(0, 0, 0, .32)" onPress={handlePressArticle}>
+          <>
+            <View style={styles.textContainer}>
+              <Text variant="headlineSmall" style={styles.title}>
+                {article.title}
+              </Text>
+              <Text>
+                {article.summary}
+              </Text>
+              <View style={styles.additionalInfo}>
+                <View>
+                  <Text style={styles.smallText}>{article.updated}</Text>
+                </View>
               </View>
             </View>
-          </View>
-        </>
-      </TouchableRipple>
-    </Surface>
+          </>
+        </TouchableRipple>
+      </Surface>
   );
 };
 
