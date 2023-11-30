@@ -4,7 +4,7 @@ import EventView from "../../routes/events";
 import { DrawerEntry } from "../../types/drawer";
 import SchamperView from "../../routes/schamper";
 import { SchamperIcon } from "../icons/SchamperIcon";
-import { i18n } from "../../i18n";
+import { i18n } from "../../lib/i18n";
 
 export const routes: DrawerEntry[] = [
   {
