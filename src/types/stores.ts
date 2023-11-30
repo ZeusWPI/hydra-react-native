@@ -15,7 +15,7 @@ export declare type Article = {
   pub_date: string;
 };
 
-export declare type DSAEvent = {
+export declare type DSAEventStore = {
   id: string;
 
   title: string;
@@ -26,8 +26,8 @@ export declare type DSAEvent = {
   location: string;
   type: string;
 
-  start_time: string; // ISO date string
-  end_time: string; // ISO date string
+  start_time: string;
+  end_time: string;
   
   infolink: string;
 }
