@@ -3,6 +3,7 @@ import RestoMenu from "../../routes/resto";
 import EventView from "../../routes/events";
 import { DrawerEntry } from "../../types/drawer";
 import SchamperView from "../../routes/schamper";
+import LibrariesView from "../../routes/libraries";
 import { SchamperIcon } from "../icons/SchamperIcon";
 
 export const routes: DrawerEntry[] = [
@@ -26,4 +27,9 @@ export const routes: DrawerEntry[] = [
     element: SchamperView,
     icon: SchamperIcon,
   },
+  {
+    name: "Libraries",
+    element: LibrariesView,
+    icon: "book",
+  }
 ];
