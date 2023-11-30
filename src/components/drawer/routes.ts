@@ -12,21 +12,25 @@ export const routes: DrawerEntry[] = [
   {
     name: i18n.t("overview"),
     element: HomeScreen,
+    headerElements: [],
     icon: "house",
   },
   {
     name: i18n.t("resto"),
     element: RestoMenu,
+    headerElements: [],
     icon: "utensils",
   },
   {
     name: i18n.t("events"),
     element: EventView,
+    headerElements: [],
     icon: "calendar-day",
   },
   {
     name: i18n.t("schamper"),
     element: SchamperView,
+    headerElements: [],
     icon: SchamperIcon,
   },
   {

@@ -63,7 +63,21 @@ export default function AppDrawer() {
   return (
     <Drawer.Navigator drawerContent={IconedDrawer}>
       {routes.map(r => (
-        <Drawer.Screen key={r.name} name={r.name} component={SuspendedScreenViewGenerator(r.element)} />
+        <Drawer.Screen key={r.name} name={r.name} component={SuspendedScreenViewGenerator(r.element)} options={({ navigation }) => ({
+          headerRight: () => {
+            return (
+              <View style={{flexDirection:'row'}}>
+                {r.headerElements.map((headerElement, index) => {
+                  return (
+                    <View key={index}>
+                      { headerElement() }
+                    </View>
+                  )
+                })}
+              </View>
+            )
+          },
+        })}/>
       ))}
     </Drawer.Navigator>
   );
