@@ -1,12 +1,12 @@
-import { UGentArticle } from "../types/stores";
-import { ENDPOINTS } from "../constant";
-import { useSuspenseQuery } from "@tanstack/react-query";
-import { useFocusNotifyOnChangeProps } from "../lib/hooks/useFocusNotifyOnChangeProps";
+import {UGentArticle} from "../types/stores";
+import {ENDPOINTS} from "../constant";
+import {useSuspenseQuery} from "@tanstack/react-query";
+import {useFocusNotifyOnChangeProps} from "../lib/hooks/useFocusNotifyOnChangeProps";
 
 export const useUGentQuery = () => {
   const notifyOnChangeProps = useFocusNotifyOnChangeProps();
 
-  const UGentQuery = useSuspenseQuery<UGentArticle[], Error>({
+  return useSuspenseQuery<UGentArticle[], Error>({
     queryKey: ["news"],
     queryFn: async () => {
       const res = await fetch(`${ENDPOINTS.HYDRA_V2}/news/nl.json`);
@@ -15,5 +15,4 @@ export const useUGentQuery = () => {
     },
     notifyOnChangeProps,
   });
-  return UGentQuery;
 };
