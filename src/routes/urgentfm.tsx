@@ -14,28 +14,24 @@ export const UrgentFMView = () => {
   const [streamState, setStreamState] = useState<StreamState>(StreamState.PAUSED);
   const { data: metadata } = useUrgentQuery();
 
-  const streamStateChange = useCallback(
-    (s: AVPlaybackStatus) => {
-      if (!audioStream) {
-        return;
-      }
-      if ("error" in s) {
-        setStreamState(StreamState.ERRORED);
-      }
-      setStreamState((s as AVPlaybackStatusSuccess).isPlaying ? StreamState.PLAYING : StreamState.BUFFERING);
-    },
-    [audioStream]
-  );
-
   const playStream = useCallback(async () => {
     setStreamState(StreamState.BUFFERING);
     if (audioStream) {
       await audioStream.playAsync();
       return;
     }
-    const { sound } = await Audio.Sound.createAsync({ uri: metadata.url }, { shouldPlay: true }, streamStateChange);
+    const { sound } = await Audio.Sound.createAsync(
+      { uri: metadata.url },
+      { shouldPlay: true },
+      (s: AVPlaybackStatus) => {
+        if ("error" in s) {
+          setStreamState(StreamState.ERRORED);
+        }
+        setStreamState((s as AVPlaybackStatusSuccess).isPlaying ? StreamState.PLAYING : StreamState.BUFFERING);
+      }
+    );
     setAudioStream(sound);
-  }, [audioStream, metadata, streamStateChange]);
+  }, [audioStream, metadata]);
 
   const stopStream = useCallback(async () => {
     if (!audioStream) {
