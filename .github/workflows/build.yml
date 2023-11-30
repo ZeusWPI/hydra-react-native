@@ -12,12 +12,12 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Cache Primes
+    - name: Cache node modules
       id: cache-android-install
       uses: actions/cache@v3
       with:
-        path: "$ANDROID_SDK_ROOT"
-        key: ${{ runner.os }}-android-sdk
+        path: node_modules
+        key: build-node-modules
 
     - name: Use Node.js 18
       uses: actions/setup-node@v3
