@@ -1,4 +1,4 @@
-// import { ScrollView } from "react-native-gesture-handler";
+import { ScrollView } from "react-native-gesture-handler";
 import { useSchamperQuery } from "../stores/schamper";
 import { SchamperArticle } from "../components/feed/SchamperArticle";
 import { StyleSheet } from "react-native";

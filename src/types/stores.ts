@@ -1,3 +1,13 @@
+export declare type UrgentStatus = {
+  meta: {
+    name: string;
+    description: string;
+    image: string;
+  };
+  name: string;
+  url: string;
+  validUntil: Date;
+};
 
 export declare type Article = {
   title: string;

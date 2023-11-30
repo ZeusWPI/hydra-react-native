@@ -17,6 +17,9 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   ios: {
     supportsTablet: false,
     bundleIdentifier: "be.ugent.zeus.hydra",
+    infoPlist: {
+      UIBackgroundModes: ["audio"],
+    },
   },
   android: {
     package: "be.ugent.zeus.hydra",

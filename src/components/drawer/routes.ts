@@ -5,6 +5,8 @@ import { DrawerEntry } from "../../types/drawer";
 import SchamperView from "../../routes/schamper";
 import { SchamperIcon } from "../icons/SchamperIcon";
 import { i18n } from "../../lib/i18n";
+import { UrgentFMView } from "../../routes/urgentfm";
+import { UrgentFMIcon } from "../icons/UrgentFMIcon";
 
 export const routes: DrawerEntry[] = [
   {
@@ -26,5 +28,10 @@ export const routes: DrawerEntry[] = [
     name: i18n.t("schamper"),
     element: SchamperView,
     icon: SchamperIcon,
+  },
+  {
+    name: "Urgent.fm",
+    element: UrgentFMView,
+    icon: UrgentFMIcon,
   },
 ];
