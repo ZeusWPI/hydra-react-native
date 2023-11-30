@@ -3,6 +3,7 @@ import type { Article } from "../../types/stores";
 import { Image, StyleSheet, View } from "react-native";
 import { useEffect, useState } from "react";
 import * as WebBrowser from "expo-web-browser";
+import moment from "moment/moment";
 export const SchamperArticle = ({ article }: { article: Article }) => {
   const [imgSize, setImgSize] = useState({ width: 0, height: 1 });
 
@@ -37,7 +38,7 @@ export const SchamperArticle = ({ article }: { article: Article }) => {
             <View style={styles.additionalInfo}>
               <View>
                 <Text style={styles.smallText}>{article.author}</Text>
-                <Text style={styles.smallText}>{article.pub_date}</Text>
+                <Text style={styles.smallText}>{moment(article.pub_date).format("DD MMM, H:mm")}</Text>
               </View>
               <Text style={styles.smallText}>{article.category.toUpperCase()}</Text>
             </View>

@@ -2,6 +2,7 @@ import {Surface, Text, TouchableRipple} from "react-native-paper";
 import type {UGentArticle} from "../../types/stores";
 import {StyleSheet, View} from "react-native";
 import * as WebBrowser from "expo-web-browser";
+import moment from "moment";
 
 export const UGentArticleFeed = ({article}: { article: UGentArticle }) => {
 
@@ -22,7 +23,7 @@ export const UGentArticleFeed = ({article}: { article: UGentArticle }) => {
               </Text>
               <View style={styles.additionalInfo}>
                 <View>
-                  <Text style={styles.smallText}>{article.updated}</Text>
+                  <Text style={styles.smallText}>{moment(article.updated).format("DD MMM, H:mm")}</Text>
                 </View>
               </View>
             </View>
