@@ -41,7 +41,7 @@ export const routes: DrawerEntry[] = [
     icon: UrgentFMIcon,
   },
   {
-    name: "UGent News",
+    name: i18n.t("ugent_news"),
     element: NewsView,
     icon: "newspaper"
   }

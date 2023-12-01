@@ -1,5 +1,6 @@
 {
   "overview": "Overzicht",
   "events": "Evenementen",
-  "urgentAboutProgramme": "Over %{programme}"
+  "urgentAboutProgramme": "Over %{programme}",
+  "ugent_news": "UGent Nieuws"
 }

@@ -3,5 +3,6 @@
   "resto": "Resto",
   "events": "Events",
   "schamper": "Schamper",
-  "urgentAboutProgramme %{programme}": "About %{programme}"
+  "urgentAboutProgramme %{programme}": "About %{programme}",
+  "ugent_news": "UGent News"
 }
