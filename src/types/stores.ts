@@ -14,3 +14,39 @@ export declare type Article = {
   // ISO date string
   pub_date: string;
 };
+
+export declare type LibraryRequest = {
+  libraries: Library[];
+};
+
+export declare type Library = {
+  name_en: string;
+  has_hours: boolean;
+  lat: number;
+  image_url: string;
+  telephone: string[];
+  reading_room: string;
+  link_nl: string;
+  created_at: string;
+  door_number: string;
+  email: string;
+  department: string;
+  contact: string;
+  pickup_locations: string[];
+  updated_at: string;
+  link_en: string;
+  active: boolean;
+  email_acquisition: string;
+  cubee_id: string;
+  link: string;
+  sap_id: string;
+  shipment_library_code: string;
+  name: string;
+  faculty: string;
+  code: string;
+  thumbnail_url: string;
+  address: string[];
+  name_nl: string;
+  campus: string;
+  long: number;
+};
