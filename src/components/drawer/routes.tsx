@@ -7,6 +7,7 @@ import { SchamperIcon } from "../icons/SchamperIcon";
 import { i18n } from "../../lib/i18n";
 import { UrgentFMView } from "../../routes/urgentfm";
 import { UrgentFMIcon } from "../icons/UrgentFMIcon";
+import { RefreshIconButton } from "../RefreshIconButton";
 
 export const routes: DrawerEntry[] = [
   {
@@ -30,7 +31,7 @@ export const routes: DrawerEntry[] = [
   {
     name: i18n.t("schamper"),
     element: SchamperView,
-    headerElements: [],
+    headerElements: [<RefreshIconButton key="refresh" queryKey={["schamper"]} />],
     icon: SchamperIcon,
   },
   {

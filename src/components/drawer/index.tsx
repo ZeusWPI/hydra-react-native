@@ -7,7 +7,7 @@ import {
 import { routes } from "./routes";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { StyleSheet, Text, View } from "react-native";
-import { Suspense } from "react";
+import { Suspense, useCallback } from "react";
 import HydraErrorBoundary from "../ErrorBoundary";
 import { ActivityIndicator } from "react-native-paper";
 import { DrawerEntry } from "../../types/drawer";
@@ -59,25 +59,27 @@ const SuspendedScreenViewGenerator = (element: () => React.JSX.Element) => () =>
   );
 };
 
+const HeaderElements = (elements: React.ReactNode[]) => () =>
+(
+  <View style={{ flexDirection: "row" }}>
+    {elements.map((headerElement, index) => {
+      return <View key={index}>{headerElement}</View>;
+    })}
+  </View>
+);
+
 export default function AppDrawer() {
   return (
     <Drawer.Navigator drawerContent={IconedDrawer}>
       {routes.map(r => (
-        <Drawer.Screen key={r.name} name={r.name} component={SuspendedScreenViewGenerator(r.element)} options={({ navigation }) => ({
-          headerRight: () => {
-            return (
-              <View style={{flexDirection:'row'}}>
-                {r.headerElements.map((headerElement, index) => {
-                  return (
-                    <View key={index}>
-                      { headerElement() }
-                    </View>
-                  )
-                })}
-              </View>
-            )
-          },
-        })}/>
+        <Drawer.Screen
+          key={r.name}
+          name={r.name}
+          component={SuspendedScreenViewGenerator(r.element)}
+          options={() => ({
+            headerRight: HeaderElements(r.headerElements),
+          })}
+        />
       ))}
     </Drawer.Navigator>
   );
