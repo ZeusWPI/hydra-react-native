@@ -1,5 +1,5 @@
 import { useDSAQuery } from "../stores/dsa";
-import { DSAEvent } from "../components/feed/DSAEvent";
+import { DSAEventDay } from "../components/feed/DSAEvent";
 import { StyleSheet, ScrollView } from "react-native";
 import { DSAEventStore } from "../types/stores";
 
@@ -18,11 +18,9 @@ export default function EventView() {
 
   return (
     <ScrollView contentContainerStyle = {styles.container}>
-      {activities.map((activity) => {
-        console.log(activity);
-        return <DSAEvent key = { activity.id } event = { activity } />
-      }
-      )}
+      {Object.entries(activitiesByStartTime).map(([date, events]) => (
+        <DSAEventDay key={date} events={events} date={date} />
+      ))}
     </ScrollView>
   );
 }
