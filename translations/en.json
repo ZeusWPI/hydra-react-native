@@ -1,6 +1,7 @@
 {
-    "overview": "Overview",
-    "resto": "Resto",
-    "events": "Events",
-    "schamper": "Schamper" 
+  "overview": "Overview",
+  "resto": "Resto",
+  "events": "Events",
+  "schamper": "Schamper",
+  "urgentAboutProgramme %{programme}": "About %{programme}"
 }

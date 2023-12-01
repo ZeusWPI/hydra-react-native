@@ -6,6 +6,7 @@ import { useCallback, useEffect, useState } from "react";
 import { StreamState } from "../enums/streamState";
 import { StreamStatusIcon } from "../components/StreamStatusIcon";
 import { useUrgentQuery } from "../stores/urgent";
+import { i18n } from "../lib/i18n";
 
 // TODO: Add social media buttons
 
@@ -80,7 +81,11 @@ export const UrgentFMView = () => {
       </TouchableRipple>
       {metadata.meta.description !== "" && (
         <View style={styles.metadataContainer}>
-          <Text variant="titleMedium">About {metadata.meta.name}</Text>
+          <Text variant="titleMedium">
+            {i18n.t("urgentAboutProgramme %{programme}", {
+              programme: metadata.name,
+            })}
+          </Text>
           <Text variant="bodySmall">{metadata.meta.description}</Text>
         </View>
       )}
