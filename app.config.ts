@@ -25,4 +25,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       backgroundColor: "#ffffff",
     },
   },
+  "plugins": [
+    "expo-localization"
+  ]
 });

@@ -4,25 +4,26 @@ import EventView from "../../routes/events";
 import { DrawerEntry } from "../../types/drawer";
 import SchamperView from "../../routes/schamper";
 import { SchamperIcon } from "../icons/SchamperIcon";
+import { i18n } from "../../lib/i18n";
 
 export const routes: DrawerEntry[] = [
   {
-    name: "Overview",
+    name: i18n.t("overview"),
     element: HomeScreen,
     icon: "house",
   },
   {
-    name: "Resto",
+    name: i18n.t("resto"),
     element: RestoMenu,
     icon: "utensils",
   },
   {
-    name: "Events",
+    name: i18n.t("events"),
     element: EventView,
     icon: "calendar-day",
   },
   {
-    name: "Schamper",
+    name: i18n.t("schamper"),
     element: SchamperView,
     icon: SchamperIcon,
   },
