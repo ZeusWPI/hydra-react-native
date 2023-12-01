@@ -7,10 +7,10 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   version: "1.0.0",
   description: "Hydra gives you access to all the UGent info wherever you are",
   orientation: "portrait",
-  icon: "./assets/icon.png",
+  icon: "./assets/logo/ugent.png",
   userInterfaceStyle: "automatic",
   splash: {
-    image: "./assets/icon.png",
+    image: "./assets/splash.png",
     backgroundColor: "#1e64c8",
   },
   assetBundlePatterns: ["**/*"],
@@ -21,7 +21,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   android: {
     package: "be.ugent.zeus.hydra",
     adaptiveIcon: {
-      foregroundImage: "./assets/icon.png",
+      foregroundImage: "./assets/logo/ugent.png",
       backgroundColor: "#ffffff",
     },
   },
