@@ -1,7 +1,7 @@
-// import { ScrollView } from "react-native-gesture-handler";
+import { ScrollView } from "react-native-gesture-handler";
 import { useUGentQuery } from "../stores/news";
 import { UGentArticleFeed } from "../components/feed/UGentArticle";
-import { StyleSheet, ScrollView } from "react-native";
+import { StyleSheet } from "react-native";
 
 const NewsView = () => {
   const { data: articles } = useUGentQuery();
