@@ -38,7 +38,7 @@ export const routes: DrawerEntry[] = [
   {
     name: "Urgent.fm",
     element: UrgentFMView,
-    icon: UrgentFMIcon,
+    icon: UrgentFMIcon
   },
   {
     name: i18n.t("ugent_news"),
