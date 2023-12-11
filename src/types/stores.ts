@@ -24,3 +24,11 @@ export declare type Article = {
   // ISO date string
   pub_date: string;
 };
+
+export declare type UGentArticle = {
+  content: string,
+  link: string,
+  summary: string,
+  title: string,
+  updated: string
+}

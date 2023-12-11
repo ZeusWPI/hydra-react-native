@@ -77,7 +77,7 @@ export default function AppDrawer() {
           name={r.name}
           component={SuspendedScreenViewGenerator(r.element)}
           options={() => ({
-            headerRight: HeaderElements(r.headerElements),
+            headerRight: r.headerElements && HeaderElements(r.headerElements),
           })}
         />
       ))}
